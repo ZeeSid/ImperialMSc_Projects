@@ -9,7 +9,7 @@
 #Returns a fasta sequence with a specified ID. Returns the description lines of all the sequences as a list. Returns the IDs of all the sequences as a list. Returns the length of a sequence with a specified ID.
 #To incorporate this functionality separate methods should be added to the FastaRecord class. Write a script that tests the modified class.
 
-
+#file name: fasta3.py
 class FastaRecord(object):
     # Class representing a FASTA record
 
@@ -97,6 +97,47 @@ class FastaParser(object):
 		for record in self.record_list:
 			descriptions.append(record.description)
 		return descriptions
+
+	
+	
+#testing script that runs the above code
+#file name: runfasta3.py
+
+from Fasta3 import FastaParser
+
+parser = FastaParser('multi_sequences.fasta')
+print (parser)
+
+#for fasta_record in parser:
+#	print(fasta_record.description)
+    	#if fasta_record.matches('Q9Y233'):
+        #	print(fasta_record)
+
+print ("Now the list of fasta records")
+
+for fasta_record in parser.getRecords():
+	print(fasta_record)
+
+
+# Get sequence by ID
+print ("Record by ID")
+
+print(parser.getRecordByID("DS572233"))
+
+# Get the description lines
+
+descriptions = parser.getDescriptions()
+print(descriptions)
+
+# Get the IDs
+
+ids = parser.getIDs()
+print(ids)
+
+# Get sequence length by ID
+
+seqlen = parser.getSeqLength("DS572233")
+print(seqlen)
 
 
 ##########################################################################################################################
