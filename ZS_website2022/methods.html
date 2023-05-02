@@ -1,0 +1,185 @@
+
+<!DOCTYPE HTML>
+<!--
+	Twenty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<script type="text/javascript">
+	function reveal1() {
+		var x = document.getElementById("click1");
+		if (x.style.display === "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+
+	}
+	function reveal2() {
+		var x = document.getElementById("click2");
+		if (x.style.display === "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+
+	}
+	function reveal3() {
+		var x = document.getElementById("click3");
+		if (x.style.display === "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+</script>
+
+<html>
+	<head>
+		<title>Methods</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<header id="header">
+			<!--	<h1><a href="index.html">Twenty <span>by HTML5 UP</span></a></h1> -->
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="introduction.html">Introduction</a></li>
+						<li><a href="methods.html">Methods</a></li>
+								<li class="submenu">
+									<a href="results.html">Results</a>
+									<ul>
+										<li><a href="results.html#results1">Pipeline optimisation</a></li>
+										<li><a href="results.html#results2">Single-cell data</a></li>
+										<li><a href="results.html#results3">Bacterial growth curves and generation times</a></li>
+									</ul>
+								<li><a href="conclusion.html">Discussion</a></li>
+								<li><a href="references.html">References</a></li>
+							</ul>
+				</nav>
+			</header>
+
+			<!-- Main -->
+				<article id="main">
+
+					<header class="special container">
+						<span class="icon solid fa-bacteria"></span>
+						<h3><strong>Methods</strong></h3>
+					</header>
+
+					<!-- One -->
+						<section class="wrapper style4 container">
+
+							<!-- Content -->
+								<div class="content">
+									<section>
+										<h2><strong>Click each banner to expand</strong></h2>
+										<br><br>
+										<img src="images/method1_dataprep.png" alt="Data preparation" width="700x" height="400px" onclick="reveal1()">
+										<div id=click1 style="display: none">
+											<br>
+										<header>
+											<h3><b>Image pre-processing</b></h3>
+										</header>
+										<p>The DeLTA2 software is unable to process multi-page tifs, unless they are in OME-TIFF format. This is because there is no standard on how exactly data is stored in regular multi-page tifs. Hence, the input images need to be manually re-formatted for them to be a sequence of single-page tifs. Using Image J <a href="https://imagej.nih.gov/ij/download.html" target="_blank">[5]</a> , I imported the tif file, then saved as image sequence. Note the image must be saved named ‘Position01_Channel01_Frame’. And the digits value must be 6, and the start must be from 1. 
+										</p>
+										<style type="text/css">
+
+										</style>
+			
+							           <br><br>
+							           </div>
+
+											<img src="images/method2_Delta2Pipe.png" alt="Data preparation" width="700px" height="400px" onclick="reveal2()">
+											<div id=click2 style="display: none">
+												<br>
+										<header>
+											<h3><b>Running the Delta 2 pipeline using python and google collab notebook</b></h3>
+										</header>
+
+										<p>
+											Images were analysed using the Google Colab notebook implementation of Delta2, that was publicly available [ref].
+
+                                            All packages and dependencies are installed through pip and use the sources from gitlab. The next step is to mount the users personal drive onto the collab instance. Before a pipeline can be run, the notebook settings must be changed to have GPU selected as the hardware accelerator, and HIGH-RAM must be selected for runtime shape. This ensures that the pipeline is run as quickly and efficiently as possible. Once these changes are made, the pipeline can be run by selecting the PROCESS SEQUENCE FOLDER tab in the notebook. The required input for this step is the zip file of image sequences. As well as a link to an empty results folder on the users google drive (which is made beforehand). Furthermore, there are three additions that must be made to the code in order to allow drift correction, to ensure accurate tracking of the cells over a sequence of frames. These lines of code are:
+											
+											<ol>
+												<li><b>delta.config.drift_correction = True</b></li>
+												<li><b> delta.config.whole_frame_drift = True</b></li>
+												<li><b> shutil.copy(drive_path+filename, local_file)   </b></li>
+											</ol>
+
+											
+ 
+											Once the pipeline is initiated, Delta 2 will segment images, track segmented cells through time and reconstruct the lineage. And extract features such as cell length, cell area, etc. 
+											The pipeline will saveand output three files: A pickle file that can be used to reload the corresponding Position object, a “legacy” Matlab MAT file that contains the main output data of the Position object (ie, Lineage objects and other parameters relevant to data analysis), and an MP4 movie file to check the quality of the segmentation and tracking.	
+										</p>
+
+
+									</div>
+
+										<img src="images/methods3_Datalysis.png" alt="Data preparation" width="700px" height="400px" onclick="reveal3()">
+										<div id="click3" style="display: none">
+											<br>
+										<header>
+											<h3><b>Analysing the python pkl file using pandas and jupyter notebook</b></h3>
+										</header>
+										<p> The pickle file output was saved and used for further data analysis in jupyter notebooks. 
+											In order to obtain single-cell data. The processor.positions[ ] utility was utlised. This allows the user to get single-cell information across the entire duration of the sequence (as displayed in figure x)
+											Once the pkl file is reloaded, information an be extracted from it. This file contains a ‘res’ field, which consists of a list of dictionaries containing data relevant to segmentation and  lineages for each chamber in the FOV (what is a chamber -explain it in the intro). The data that I am interested in is contained within the Lineage field, which has lineage information for all cells detected and tracked in the chamber. Custom python scripts were used to extract information from the pkl file and are displated in figures a and b. 
+										</p> The pkl file was downloaded onto a local machine and custom python scripts were used to create a dataframe in order to extract information on the number of cells and bacterial generation time, for each dataset/sample. <p>
+										
+										<p> The generation time was calculated using this formula:</p>
+										
+										<figure>
+											<img src = "images/GT_equation.png">
+											<figcaption>Generation time formula. Where T is the time interval in minutes. Nt is the final number of cells, and No is the initial number of cells.</figcaption>
+										</figure>
+										
+										<br>
+										<p>Once this information was obtained. GraphPad prism (ref) was used calculate a one-way ANOVA, and plot the bacterial growth curves for the samples analysed (fig x). Note, Since most of the variability between replicates will come from initial levels, for the x-acis, I plotted log(bacterial counts)/log(bacterial count at start), so that all the curves will start at 1. And the y-axis was the time in minutes. </p>
+										
+						
+									</div>
+									</section>
+								</div>
+
+								<footer class="major">
+									<ul class="buttons">
+										<li><a href="results.html" class="button">Results > </a></li>
+									</ul>
+								</footer>
+
+						</section>
+
+				</article>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="copyright">
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollgress.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

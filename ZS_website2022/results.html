@@ -1,0 +1,201 @@
+
+<!DOCTYPE HTML>
+<!--
+	Twenty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Results</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<header id="header">
+			<!--	<h1><a href="index.html">Twenty <span>by HTML5 UP</span></a></h1> -->
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="introduction.html">Introduction</a></li>
+						<li><a href="methods.html">Methods</a></li>
+								<li class="submenu">
+									<a href="results.html">Results</a>
+									<ul>
+										<li><a href="results.html#results1">Pipeline optimisation</a></li>
+										<li><a href="results.html#results2">Single-cell data</a></li>
+										<li><a href="results.html#results3">Bacterial growth curves and generation times</a></li>
+									</ul>
+								<li><a href="conclusion.html">Discussion</a></li>
+								<li><a href="references.html">References</a></li>
+							</ul>
+				</nav>
+			</header>
+
+			<!-- Main -->
+				<article id="main">
+
+					<header class="special container">
+						<span class="icon solid fa-bacteria"></span>
+						<h3><strong>Results</strong></h3>
+					</header>
+
+					<!-- One -->
+						<section class="wrapper style4 container">
+
+							<!-- Content -->
+								<div class="content">
+									<section>
+										<div id="results1">
+										<header>
+											<h4>Pipeline optimisation</h4>
+										</header>
+										<p> There is an issue is that the tracking of the initial cells present in the first frame fails and after frame ~32 DeLTA loses track of them and assigns them to other cells or entirely new ones. The field of view tends to jump around a bit between consecutive frames and eventually you get too many tracking errors.
+									
+										</p>
+											<img src="images/pipeline_optimisation.png" width="1000px" height="400px" class="center" id="fig2">
+										<figcaption>  
+										Figure x. Plot of each cell’s length over time, with different colors for the first cells. FigA is obtained before manually reformatting image sequencesa and applying drift correction code. Fig B is after applying theses changes. Coloured  line is a representative example of one cell’s length as it grows and divides; all cells in the microcolony are shown in navy blue. It can be seen that a greater number of cells are tracked in Fig B.
+											
+										</figcaption>
+										<br><br>
+
+										<p>There is the other issue of tracking not working, even after the pipeline is optimised. The below two videos show two scenarious. 1) FpvB presence of gentamicin. 2) Absence of gentamicin. Even after manually formatting the images, one works and the other does not. 
+
+										</p>
+
+
+										<p> video of vsFpvB_GM_Rep1</p>
+										<video  width="1050" height="500" controls >
+											<source src = "videos/vsFpvB_gm_rep1.mp4" type= "video/mp4" autoplay>
+										</video>
+
+										<br><br>
+										<br><br>
+
+										<p> video of vsFpvB_Absence of Gem, Rep1</p>
+										<video  width="1050" height="500" controls >
+											<source src = "videos/vsFpvB_NOGM.mp4" type= "video/mp4" autoplay>
+										</video>
+										
+										
+									
+									</div>
+										<br>
+										<div id="results2">
+										<header>
+											<h4><strong> Single cell results</strong></h4>
+										</header>
+
+										<p>
+											Single cell data extracted from the pkl file...sc can be used for a variety of things...hence, data presented here but data for each cell, in each sample is present for further processing by the Jose jimenez lab.
+										</p>
+
+										<img src="images/SC_1.png" width="1000px" height="600px" class="center" id="fig2">
+										<figcaption>  
+											
+										Figure X: Single cell data (first cell) of the ‘WT (vsFpvA) +Gentamicin sample’, tracked from frame 1 to frame 30 (entire image sequence). A. Cell length in pixels vs frame. B. Cell width vs frame number. C. Cell area vs frame number. D. Cell area vs Frame number. Fluctuation is seen in all figures above.
+
+										</figcaption>
+										<br><br>
+
+										<p> The delta 2 pipeline can also be used/information on x can be extracted to display which cells are descended from either of the first two cells on the last frame.</p>
+
+										<img src="images/sc_2.png" width="800px" height="500px" class="center" id="fig2">
+										<figcaption>  
+											
+										WT (vsFpvA) +Gentamicin sample’
+										</figcaption>
+										<br><br>
+
+
+										<style type="text/css">
+
+</style>
+</table>
+	
+									</div>
+									<br>
+									<div id="results3">
+										<header>
+											<h4>Bacterial groth rates</h4>
+										</header>
+
+										<p>Bacterial growth rates graph will go here</p>
+
+											<img src="images/BGC_results.png" width="1150px" height="500px" class="center" id="fig2">
+										<figcaption><b>Figure x:</b> Graphs for the growth of (A) Mutant and wildtype P. aeruginosa cultured in the presence of gentamicin. B) Mutant and wildtype P. aeruginosa cultured in the absence of gentamicin. ∆FpvA cultured in competition with wildtype is coloured green. Wildtype cultured in competition with ∆FpvB is coloured red. ∆FpvB cultured in competition with wildtype is coloured black. Wildtype cultured alone is coloured blue. Wildtype cultured in competition with ∆FpvA is colored orange.											
+										</figcaption>
+										
+										<br><br><br>
+
+
+										<p>
+											Alone vs competition. 
+											In the absence of gentamicin, the growth rate of wild-type grown alone versus the growth of wildtype grown in competition with ∆FpvA was not significantly reduced in both replicates 1 and 2 (p = 0.5000, and p = 0.1000, respectively). The growth rate of wildtype alone versus the growth of wildtype grown in competition with ∆FpvB (vsFpvB), was likewise not significantly reduced in both replicates 1 and 2  (p =0.6328, and p = 0.7555, respectively) ).
+											Note, lineage tracking issue with WT rep 1 (see video 1) : plateaus early.Growth rate not affected. -> discussion. 
+											In the presence of gentamicin, the growth rate of wild-type alone versus the growth of wildtype grown in competition with ∆FpvA (vsFpvA) was not significantly reduced in both replicates 1 and 2 (p = 0.1000, and p = 0.1531, respectively). When grown in competition with ∆FpvB (vsFpvB) in the presence of gentamicin, the growth rate of wild-type was similarly not significantly reduced compared to when grown on its own, in both replicates 1 and 2 (p = 0.4411, 0.1000, respectively ).
+											
+											-Grown in competition:
+											In the presence of gentamicin, the growth rate of wild-type  and ∆FpvA were  not significantly different in both replicates 1 and 2 (p = 0.1200 , and p =  0.1000, respectively) when grown in competition. The addition of gentamicin also had minimal effect on wildtype versus ∆FpvB, as the growth rate of wildtype and ∆FpvB when grown in competition, were not significantly different in both replicates 1 and 2 (p = 0.5411, and p = 0.1000, respectivley).
+											In the absence of gentamicin, the datasets for ‘FpvA (vsWT)’ and  ‘FpvB (vsWT)’  were not suitable for statistical analysis (one-way ANOVA). The video and lineage tracking files were incomplete, this is likely due to jittering of images, in both replicates. Data has been presented in figure XA for reporting purposes, but this current study was unable to carry out further analysis between the growth rate of wild-type compared to ∆FpvA, when grown together in competition. Similarly, this study was unable to carry out analysis on the difference between the growth rates of ∆FpvB and wildtype when grown together in competition.
+											Overall, these results suggests that when ∆FpvA, and ∆FpvB are cultured alongside wildtype, neither mutants grow significantly faster than wildtype, in the absence or presence of gentamicin. Furthermore, neither mutant significantly reduces the growth rate of wild-type compared to its growth rate when grown alone
+										
+										</p>
+
+										<br><br><br>
+
+										<p><strong>Generation times</strong></p>
+										<p> 
+											There is a decrease in the generation time for Wild Type grown in the absence of gentamicin, when compared to WT grown in the presence of gentamicin. Replicate 1 generation time (GT) decreases from 49 minutes to 39 minutes. Replicate 2 time decreases from 53 minutes to 36 minutes. 
+											In the presence of gentamicin, when comparing the GT of wildtype grown alone, with WT grown in competition with ∆FpvA, GT of the wildtype decreased in both replicates. From 49 minutes to 41 minutes in replicate 1. And from 53 minutes to 42 minutes in replicate 2. Similarly, when comparing the GT of wildtype grown alone, with WT grown in competition with ∆FpvB, GT of the wildtype decreased in both replicates. From 49 minutes to 42 minutes in replicate 1. And from 53 minutes to 41 minutes in replicate 2.
+											In the absence of gentamicin, when comparing the GT of wildtype grown alone, with WT grown in competition with ∆FpvA, GT of the wildtype decreased in both replicates. From 39 minutes to 30 minutes in replicate 1. And from 36 minutes to 31 minutes in replicate 2. When comparing the GT of wildtype grown alone, with WT grown in competition with ∆FpvB,  GT increased from 39 minutes to 41 minutes in replicate 1. For replicate 2, GT increased from 36 minutes to 38 minutes. 
+											Overall, the above results suggests that, in the presence of gentamicin, 	wildtype actually divides quicker when in competition with either mutant, compared to when grown alone. In the absence of gentamicin, WT grows faster when grown in competition with ∆FpvA, compared to when grown alone. However, WT grows slower when grown in competition with ∆FpvB, compared to when grown alone. Hence, both mutants have an effect on WT division times and thus growth rate. 
+			
+											Mutants:
+											In the presence of gentamicin, mutant ∆FpvA had a higher generation time (slower growth rate) than WT, in both replicates 1 and  2 (65 mins and 63 minutes, respectively). WT generation time in replicate 1 was 49 minutes, and 53 minutes in replicate 2. Similarly, mutant ∆FpvB had a higher generation time (slower growth rate) than WT, in both replicates 1 and  2: 53 mins and 51 minutes, respectively. WT generation time in replicate 1 was 39 minutes, and 36 minutes in replicate 2. Generation times of the mutants in the absence of gentamicin were not conducted/generated due to the noisy nature of the data. 
+											Overall, these results suggest that, in the presence of gentamicin, both mutants, ∆FpvA and ∆FpvB, divide slower and have longer generation times compared to wildtype when grown in competition. 
+
+										</p>
+
+
+
+
+								<footer class="major">
+									<ul class="buttons">
+										<li><a href="conclusion.html" class="button">Discussion > </a></li>
+									</ul>
+								</footer>
+
+						</section>
+
+				</article>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="copyright">
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollgress.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

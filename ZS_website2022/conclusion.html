@@ -1,0 +1,113 @@
+
+<!DOCTYPE HTML>
+<!--
+	Twenty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<html>
+	<head>
+		<title>Discussion</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<header id="header">
+			<!--	<h1><a href="index.html">Twenty <span>by HTML5 UP</span></a></h1> -->
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="introduction.html">Introduction</a></li>
+						<li><a href="methods.html">Methods</a></li>
+								<li class="submenu">
+									<a href="results.html">Results</a>
+									<ul>
+										<li><a href="results.html#results1">Pipeline optimisation</a></li>
+										<li><a href="results.html#results2">Single-cell data </a></li>
+										<li><a href="results.html#results3">Bacterial growth curves and generation times</a></li>
+									</ul>
+								<li><a href="conclusion.html">Discussion</a></li>
+								<li><a href="references.html">References</a></li>
+							</ul>
+				</nav>
+			</header>
+
+			<!-- Main -->
+				<article id="main">
+
+					<header class="special container">
+						<span class="icon solid fa-bacteria"></span>
+						<h3><strong>Discussion</strong></h3>
+					</header>
+
+					<!-- One -->
+						<section class="wrapper style4 container">
+
+							<!-- Content -->
+								<div class="content">
+									<section>
+										<header>
+											<h4>Discussion</h4>
+										</header>
+										<p>Understanding the underlying causes of chronic inflammation could inform on the aetiology of complex diseases. This project aimed to identify genetic loci that have common effects on biochemical markers associated with low-grade inflammation, that may contribute to or alleviate these multifactorial conditions. These traits were <span class="tooltip">IL-6<span class="tooltiptext">interleukin-6</span></span>, insulin, fibrinogen, <span class="tooltip">LDL<span class="tooltiptext">low-density lipoprotein</span></span>, monocytes, triglycerides and vitamin D.</p>
+
+										<p>LDSC was used to evaluate which of the input traits are genetically correlated on a genome-wide level. In the pairwise comparison of all the traits, only <span class="tooltip">LDL<span class="tooltiptext">low-density lipoprotein</span></span> and triglyceride levels showed a statistically significant genetic correlation, although this does not confirm with certainty that none of the other phenotypes share pleiotropic loci. In a subset meta-analysis, after clumping to identify independent significant <span class="tooltip">SNPs<span class="tooltiptext">Single Nucleotide Polymorphism</span></span>, lead <span class="tooltip">SNPs<span class="tooltiptext">Single Nucleotide Polymorphism</span></span> from 71 genomic risk loci were found. Meta-analysis confirmed that 16/71 <span class="tooltip">SNPs<span class="tooltiptext">Single Nucleotide Polymorphism</span></span> were associated with more than one trait, and nine out of these 16 had effects on at least one trait not previously associated with that particular <span class="tooltip">SNP<span class="tooltiptext">Single Nucleotide Polymorphism</span></span>.</p>
+
+										<p>Functional annotation using FUMA highlighted links between five of these 16 pleiotropic <span class="tooltip">SNPs<span class="tooltiptext">Single Nucleotide Polymorphism</span></span> and the disease retinitis pigmentosa. The traits associated with the non-coding intergenic regions RP11, and the genes DHX38 and POC1B were <span class="tooltip">LDL<span class="tooltiptext">low-density lipoprotein</span></span>, triglycerides, <span class="tooltip">IL-6<span class="tooltiptext">interleukin-6</span></span> and monocytes. This provides new evidence that <span class="tooltip">RP<span class="tooltiptext">retinitis pigmentosa</span></span> is an inflammatory condition, as there is contradictory research about this disease classification.</p>
+										<br>
+										<header>
+											<h4>Conclusions</h4>
+										</header>
+										<p>The limitations of cross-phenotype analysis should be considered when reviewing any results. Although meta-analysis is powerful, the sizes of the cohorts from each individual study can mean that smaller studies are underpowered. For example, fibrinogen, <span class="tooltip">IL-6<span class="tooltiptext">interleukin-6</span></span> and insulin each had around 10,000 participants in their original <span class="tooltip">GWAS<span class="tooltiptext">Genome-wide association study</span></span>, whereas the other four traits had around 100,000 (Table 1, <a href="methods.html">Methods</a>). This is reflected in the results: <span class="tooltip">IL-6<span class="tooltiptext">interleukin-6</span></span> and fibrinogen had to be excluded from parts of this research, and both insulin and <span class="tooltip">IL-6<span class="tooltiptext">interleukin-6</span></span> were rarely associated with any of the lead <span class="tooltip">SNPs<span class="tooltiptext">Single Nucleotide Polymorphism</span></span> in the meta-analysis. Another feature of the data selected is that all participants are European in order to avoid inaccurate results due to confounding by population stratification. This means that the results are not directly applicable to individuals of other ethnicities. Additionally, rare variants could not be detected due to the MAF cut-off of 0.01 in the quality control process of LDSC.</p>
+
+										<p>With regards to the pleiotropic <span class="tooltip">SNPs<span class="tooltiptext">Single Nucleotide Polymorphism</span></span> identified, the interpretation of this work has focused on implications for <span class="tooltip">RP<span class="tooltiptext">retinitis pigmentosa</span></span>. However, it is possible that the variants are unrelated to the disease aetiology. More evidence is needed to substantiate the hypothesis linking chronic inflammation to <span class="tooltip">RP<span class="tooltiptext">retinitis pigmentosa</span></span>.</p>
+										<br>
+										<header>
+											<h4>Future work</h4>
+										</header>
+										<p>To build upon the findings of this work, a <span class="tooltip">GWAS<span class="tooltiptext">Genome-wide association study</span></span> or family linkage analysis focused on <span class="tooltip">RP<span class="tooltiptext">retinitis pigmentosa</span></span> could aid understanding of whether this disease is related to inflammation, and experiments with cell culture could examine whether anti-inflammatory treatments slow the progression of retinal degeneration.</p>
+
+										<p>It would also be ideal to investigate a larger number of traits that are related to the chronic inflammatory state, either using summary statistics when they become available or with individual-level data from a data repository such as the UK BioBank <a href="https://pubmed.ncbi.nlm.nih.gov/25826379/" target="_blank">[33]</a>. If further associations are uncovered it could help to provide a biological explanation for chronic inflammation, particularly when coupled with more extensive functional annotation such as expression quantitative trait loci and pathway analyses. All of this could add weight to the hypothesis that these <span class="tooltip">SNPs<span class="tooltiptext">Single Nucleotide Polymorphism</span></span> are biologically pleiotropic, as opposed to being spuriously associated. In turn, this could suggest potential causes of chronic inflammation which are largely unknown, and provide necessary insight into complex diseases.</p>
+
+										</section>
+								</div>
+
+								<footer class="major">
+									<ul class="buttons">
+										<li><a href="references.html" class="button">References > </a></li>
+									</ul>
+								</footer>
+
+						</section>
+
+				</article>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="copyright">
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollgress.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
